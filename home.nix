@@ -6,6 +6,7 @@
     ./modules/aliases.nix
     ./modules/variables.nix
     ./modules/librewolf.nix
+    ./modules/tmux.nix
   ];
 
   home.username = "commander";
