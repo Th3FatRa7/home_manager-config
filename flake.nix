@@ -16,9 +16,23 @@
       pkgs = import nixpkgs {
         system = "x86_64-linux";
         config.allowUnfree = true;
-        # TODO: Learn Overlays
         overlays = [
           nur.overlays.default
+            # TODO: Make a contributation to nixpkgs to udpate it ?
+            (final: prev: {
+             tmuxPlugins = prev.tmuxPlugins // {
+             tilish = prev.tmuxPlugins.tilish.overrideAttrs (old: {
+                 version = "my-test";
+
+                 src = prev.fetchFromGitHub {
+                 owner = "jabirali";
+                 repo = "tmux-tilish";
+                 rev = "fb9e418a34f13dbe712815e9ab42692b004bc4aa";
+                 hash = "sha256-Ri6x5RIozyUh+FhmW1Z1QEU9CL+OGqMDolbqaLO+Ggg=";
+                 };
+                 });
+             };
+             })
         ];
       };
       extraSpecialArgs = { inherit inputs; }; # TODO: Do I really need that
