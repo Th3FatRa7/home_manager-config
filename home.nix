@@ -7,6 +7,8 @@
     ./modules/variables.nix
     ./modules/librewolf.nix
     ./modules/tmux.nix
+    ./modules/ghostty.nix
+    ./modules/nixvim.nix
   ];
 
   home.username = "commander";
@@ -17,9 +19,6 @@
 
   # Social
   irssi
-
-	# Programming
-	neovim # TODO: Use nixvim instead
 
 	# Cybersecurity
 	ffuf

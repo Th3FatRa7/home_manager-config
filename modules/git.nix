@@ -9,6 +9,7 @@
       init.defaultBranch = "main";
       alias = {
         st = "status";
+	cm = "commit -m";
       };
     };
   };
