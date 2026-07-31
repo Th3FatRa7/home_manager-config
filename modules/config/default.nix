@@ -1,17 +1,19 @@
 {
   colorschemes.catppuccin.enable = true;
 
-  # TODO: Add lazy loading
+# TODO: Add lazy loading
   plugins = {
     lualine.enable = true;
     web-devicons.enable = true;
     neo-tree.enable = true;
     telescope.enable = true;
     render-markdown.enable = true;
-
-    # TODO: Make those plugins work and add some settings for them
-    # auto-session.enable = true;
-    # oil.enable = true;
+    nvim-autopairs.enable = true;
+    lazygit.enable = true;
+# TODO: Make those plugins work and add some settings for them
+# auto-session.enable = true;
+# oil.enable = true;
+# harpoon.enable = true;
   };
 
   opts = {
@@ -22,7 +24,7 @@
   };
 
   keymaps = [
-  # The legend says the neovimer switches window fast
+# The legend says the neovimer switches window fast
   {
     mode = "n";
     key = "<C-h>";
@@ -44,7 +46,7 @@
     action = "<C-w>l";
   }
 
-  # File explorer
+# File explorer
   {
     mode = "n";
     key = "<leader>e";
@@ -52,7 +54,7 @@
     options.silent = true;
   }
 
-  # Write
+# Write
   {
     mode = "n";
     key = "<leader>w";
@@ -64,7 +66,7 @@
     action = ":wa<CR>";
   }
 
-  # Quit
+# Quit
   {
     mode = "n";
     key = "<leader>q";
@@ -76,7 +78,7 @@
     action = ":wqa<CR>";
   }
 
-  # Telescope
+# Telescope
   {
     mode = "n";
     key = "<leader>ff";
