@@ -1,4 +1,4 @@
-{ config, ... }: {
+{
   colorschemes.nightfox = {
     enable = true;
     flavor = "carbonfox";
@@ -86,15 +86,15 @@
       action = "<cmd>LazyGit<cr>";
     }
 
-    # Write
+    # Save file
     {
       mode = "n";
-      key = "<leader>w";
+      key = "<leader>s";
       action = "<cmd>w<cr>";
     }
     {
       mode = "n";
-      key = "<leader>W"; # TODO: Remove this if I don't end up using it
+      key = "<leader>S";
       action = "<cmd>wa<cr>";
     }
 
