@@ -14,6 +14,7 @@
      set -g status-fg white
     '';
     plugins = with pkgs.tmuxPlugins; [
+      # TODO: make those 2 plugins work
       resurrect
       continuum
       {
@@ -25,8 +26,8 @@
           set -g @tilish-project '${config.home.homeDirectory}/Projects'
         '';
       }
-      power-theme
       {
+	# Make my custom theme or find a way to remove the seconds from the time and make the overall theme darker
         plugin = power-theme;
         extraConfig = ''
           set -g @tmux_power_theme 'snow'
