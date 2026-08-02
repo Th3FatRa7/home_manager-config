@@ -1,8 +1,9 @@
 {
-  colorschemes.nightfox = {
-    enable = true;
-    flavor = "carbonfox";
-  };
+  # colorschemes.nightfox = {
+  #   enable = true;
+  #   flavor = "carbonfox";
+  # };
+  colorschemes.rose-pine.enable = true;
 
   # TODO: Add lazy loading
   plugins = {
@@ -40,11 +41,9 @@
   opts = {
     number = true;
     relativenumber = true;
-
     shiftwidth = 2;
-
     scrolloff = 8;
-
+    wrap = false;
     cursorline = true;
   };
 

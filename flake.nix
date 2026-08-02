@@ -18,14 +18,13 @@
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, nur, nixvim, ... }: {
-    homeConfigurations.commander = home-manager.lib.homeManagerConfiguration {
+  outputs = inputs@{ self, nixpkgs, home-manager, nur, nixvim, ... }:
+    let
       pkgs = import nixpkgs {
         system = "x86_64-linux";
         config.allowUnfree = true;
         overlays = [
           nur.overlays.default
-            # TODO: Make a contributation to nixpkgs to udpate it ?
             (final: prev: {
              tmuxPlugins = prev.tmuxPlugins // {
              tilish = prev.tmuxPlugins.tilish.overrideAttrs (old: {
@@ -42,6 +41,11 @@
              })
         ];
       };
+    in
+    {
+    packages."x86_64-linux" = import ./packages.nix { inherit pkgs; };
+    homeConfigurations.commander = home-manager.lib.homeManagerConfiguration {
+      inherit pkgs;
       extraSpecialArgs = { inherit inputs; };
       modules = [ ./home.nix ];
     };
