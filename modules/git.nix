@@ -10,6 +10,8 @@
       alias = {
         st = "status";
 	cm = "commit -m";
+	l = "log --oneline";
+	ll = "log";
       };
     };
   };
