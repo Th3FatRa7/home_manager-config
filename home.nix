@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   imports = [
@@ -8,6 +8,7 @@
     ./modules/librewolf.nix
     ./modules/tmux.nix
     ./modules/ghostty.nix
+    ./modules/kitty.nix
     ./modules/nixvim
   ];
 
@@ -16,6 +17,7 @@
   home.stateVersion = "26.05";
 
   home.packages = with pkgs;[
+    nixgl.nixGLIntel
 
   # Social
   irssi

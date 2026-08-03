@@ -12,7 +12,8 @@
 	};
 	keymap = {
 	  "<cr>" = [
-	    "select_and_accept"
+	    "accept"
+	    "fallback"
 	  ];
 	};
       };

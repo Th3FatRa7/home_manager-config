@@ -16,14 +16,17 @@
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nixgl.url = "github:nix-community/nixGL";
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, nur, nixvim, ... }:
+  outputs = inputs@{ self, nixpkgs, home-manager, nur, nixvim, nixgl, ... }:
     let
       pkgs = import nixpkgs {
         system = "x86_64-linux";
         config.allowUnfree = true;
         overlays = [
+	  nixgl.overlay
           nur.overlays.default
             (final: prev: {
              tmuxPlugins = prev.tmuxPlugins // {

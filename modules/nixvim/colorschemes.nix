@@ -1,3 +1,3 @@
 {
-  colorschemes.vscode.enable = true;
+  colorschemes.catppuccin.enable = true;
 }

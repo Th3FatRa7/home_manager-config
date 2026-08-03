@@ -27,11 +27,10 @@
         '';
       }
       {
-	# Make my custom theme or find a way to remove the seconds from the time and make the overall theme darker
-        plugin = power-theme;
-        extraConfig = ''
-          set -g @tmux_power_theme 'snow'
-        '';
+	plugin = catppuccin;
+	extraConfig = ''
+	  set -g @catppuccin_window_status_style "rounded"
+	'';
       }
     ];
   };
