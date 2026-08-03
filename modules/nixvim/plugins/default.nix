@@ -9,6 +9,8 @@
     ./floaterm.nix
     ./bufferline.nix
     ./treesitter.nix
+    ./lazygit.nix
+    ./indentscope.nix
   ];
 
   plugins = {

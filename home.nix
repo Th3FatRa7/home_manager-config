@@ -33,6 +33,9 @@
 
   programs.home-manager.enable = true;
 
+  # Required by the NixVim LazyGit integration.
+  programs.lazygit.enable = true;
+
   nix = {
     package = pkgs.nix;
     settings.experimental-features = ["flakes" "nix-command"];
