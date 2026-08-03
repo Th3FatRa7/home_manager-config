@@ -8,7 +8,7 @@
     ./modules/librewolf.nix
     ./modules/tmux.nix
     ./modules/ghostty.nix
-    ./modules/nixvim.nix
+    ./modules/nixvim
   ];
 
   home.username = "commander";
