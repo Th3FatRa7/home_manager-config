@@ -3,10 +3,22 @@
     enable = true;
 
     keymaps = {
-      "<leader>ff" = "find_files";
-      "<leader>fg" = "git_files";
-      "<leader>fs" = "live_grep";
-      "<leader>fh" = "help_tags";
+      "<leader>ff" = {
+        action = "find_files";
+        options.desc = "Find files";
+      };
+      "<leader>fg" = {
+        action = "git_files";
+        options.desc = "Find Git files";
+      };
+      "<leader>fs" = {
+        action = "live_grep";
+        options.desc = "Search text";
+      };
+      "<leader>fh" = {
+        action = "help_tags";
+        options.desc = "Search help tags";
+      };
     };
   };
 }
