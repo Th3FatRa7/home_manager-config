@@ -7,6 +7,7 @@
     ./conform.nix
     ./persisted.nix
     ./floaterm.nix
+    ./bufferline.nix
     ./treesitter.nix
   ];
 
