@@ -6,6 +6,7 @@
     ./comment.nix
     ./conform.nix
     ./persisted.nix
+    ./floaterm.nix
     ./treesitter.nix
   ];
 
