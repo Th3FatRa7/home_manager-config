@@ -2,6 +2,9 @@
   imports = [
     ./telescope.nix
     ./harpoon.nix
+    ./oil.nix
+    ./comment.nix
+    ./conform.nix
     ./treesitter.nix
   ];
 

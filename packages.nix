@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, inputs, ... }: {
+  default = inputs.self.packages."x86_64-linux".update;
   update = 
     let
       repo = "https://github.com/th3fatra7/home_manager-config";

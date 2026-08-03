@@ -19,7 +19,6 @@
       continuum
       {
         plugin = tilish;
-        # TODO: nixpkgs uses and old commit of tilish that doesn't include the feature I want. I need to fix that
         extraConfig = ''
           set -g @tilish-default 'main-vertical'
           set -g @tilish-remap 'Q=q'

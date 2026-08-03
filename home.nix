@@ -17,20 +17,21 @@
   home.stateVersion = "26.05";
 
   home.packages = with pkgs;[
+    codex
     nixgl.nixGLIntel
 
-  # Social
-  irssi
+    # Social
+    irssi
 
-	# Cybersecurity
-	ffuf
-	sqlmap
-	burpsuite
+    # Cybersecurity
+    ffuf
+    sqlmap
+    burpsuite
 
-	# Useful
-	fzf
-	ripgrep
-	lsd
+    # Useful
+    fzf
+    ripgrep
+    lsd
   ];
 
   programs.home-manager.enable = true;

@@ -1,4 +1,4 @@
-{ lib, ... }: {
+{
   plugins.harpoon = {
     enable = true;
     enableTelescope = true;
@@ -6,18 +6,14 @@
     settings.settings.save_on_toggle = true;
   };
 
-  keymaps = lib.mapAttrsToList
-    (key: action: {
-      mode = "n";
-      inherit key;
-      inherit action;
-      options.silent = true;
-    }) {
-      "<leader>a" = "function() require'harpoon.mark'.add_files() end";
-      "<C-e>" = "function() require'harpoon.ui'.toggle_quick_menu() end";
-      "<C-j>" = "function() require'harpoon.ui'.nav_file(1) end";
-      "<C-k>" = "function() require'harpoon.ui'.nav_file(2) end";
-      "<C-l>" = "function() require'harpoon.ui'.nav_file(3) end";
-      "<C-;>" = "function() require'harpoon.ui'.nav_file(4) end";
-    };
+  extraConfigLua = ''
+    local harpoon = require("harpoon")
+
+    vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end, { silent = true })
+    vim.keymap.set("n", "<C-e>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, { silent = true })
+    vim.keymap.set("n", "<C-j>", function() harpoon:list():select(1) end, { silent = true })
+    vim.keymap.set("n", "<C-k>", function() harpoon:list():select(2) end, { silent = true })
+    vim.keymap.set("n", "<C-l>", function() harpoon:list():select(3) end, { silent = true })
+    vim.keymap.set("n", "<C-;>", function() harpoon:list():select(4) end, { silent = true })
+  '';
 }
