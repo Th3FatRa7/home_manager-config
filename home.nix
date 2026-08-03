@@ -1,13 +1,10 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   imports = [
     ./modules/git.nix
     ./modules/aliases.nix
     ./modules/variables.nix
     ./modules/librewolf.nix
     ./modules/tmux.nix
-    ./modules/ghostty.nix
     ./modules/kitty.nix
     ./modules/nixvim
   ];
@@ -16,7 +13,7 @@
   home.homeDirectory = "/home/commander";
   home.stateVersion = "26.05";
 
-  home.packages = with pkgs;[
+  home.packages = with pkgs; [
     codex
     nixgl.nixGLIntel
 
@@ -38,6 +35,6 @@
 
   nix = {
     package = pkgs.nix;
-    settings.experimental-features = [ "flakes" "nix-command" ];
+    settings.experimental-features = ["flakes" "nix-command"];
   };
 }
