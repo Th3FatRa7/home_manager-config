@@ -1,4 +1,8 @@
-{ pkgs, config, ... }: {
+{
+  pkgs,
+  config,
+  ...
+}: {
   programs.tmux = {
     enable = true;
     prefix = "C-a";
@@ -10,11 +14,13 @@
     terminal = "screen-256color";
     disableConfirmationPrompt = true;
     extraConfig = ''
-     set -g status-bg black
-     set -g status-fg white
+      # Persist and restore tmux sessions automatically.
+      set -g @resurrect-capture-pane-contents 'on'
+      set -g @continuum-restore 'on'
+      set -g @continuum-save-interval '15'
     '';
     plugins = with pkgs.tmuxPlugins; [
-      # TODO: make those 2 plugins work
+      # Resurrect must be loaded before Continuum.
       resurrect
       continuum
       {
@@ -26,10 +32,10 @@
         '';
       }
       {
-	plugin = catppuccin;
-	extraConfig = ''
-	  set -g @catppuccin_window_status_style "rounded"
-	'';
+        plugin = catppuccin;
+        extraConfig = ''
+          set -g @catppuccin_window_status_style "rounded"
+        '';
       }
     ];
   };
