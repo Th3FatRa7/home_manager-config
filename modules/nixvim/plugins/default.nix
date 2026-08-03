@@ -5,6 +5,7 @@
     ./oil.nix
     ./comment.nix
     ./conform.nix
+    ./persisted.nix
     ./treesitter.nix
   ];
 
